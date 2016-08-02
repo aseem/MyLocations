@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9044FD8D1D50DE03008AB479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9044FD8C1D50DE03008AB479 /* AppDelegate.swift */; };
-		9044FD8F1D50DE03008AB479 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9044FD8E1D50DE03008AB479 /* FirstViewController.swift */; };
+		9044FD8F1D50DE03008AB479 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9044FD8E1D50DE03008AB479 /* CurrentLocationViewController.swift */; };
 		9044FD911D50DE03008AB479 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9044FD901D50DE03008AB479 /* SecondViewController.swift */; };
 		9044FD941D50DE03008AB479 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9044FD921D50DE03008AB479 /* Main.storyboard */; };
 		9044FD961D50DE03008AB479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9044FD951D50DE03008AB479 /* Assets.xcassets */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		9044FD891D50DE03008AB479 /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9044FD8C1D50DE03008AB479 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9044FD8E1D50DE03008AB479 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		9044FD8E1D50DE03008AB479 /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
 		9044FD901D50DE03008AB479 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		9044FD931D50DE03008AB479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9044FD951D50DE03008AB479 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,15 +56,39 @@
 		9044FD8B1D50DE03008AB479 /* MyLocations */ = {
 			isa = PBXGroup;
 			children = (
-				9044FD8C1D50DE03008AB479 /* AppDelegate.swift */,
-				9044FD8E1D50DE03008AB479 /* FirstViewController.swift */,
-				9044FD901D50DE03008AB479 /* SecondViewController.swift */,
-				9044FD921D50DE03008AB479 /* Main.storyboard */,
-				9044FD951D50DE03008AB479 /* Assets.xcassets */,
-				9044FD971D50DE03008AB479 /* LaunchScreen.storyboard */,
+				9044FDA21D50DEC8008AB479 /* Models */,
+				9044FDA11D50DEC4008AB479 /* Views */,
+				9044FDA01D50DEBC008AB479 /* Controllers */,
 				9044FD9A1D50DE03008AB479 /* Info.plist */,
 			);
 			path = MyLocations;
+			sourceTree = "<group>";
+		};
+		9044FDA01D50DEBC008AB479 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9044FD8C1D50DE03008AB479 /* AppDelegate.swift */,
+				9044FD901D50DE03008AB479 /* SecondViewController.swift */,
+				9044FD8E1D50DE03008AB479 /* CurrentLocationViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9044FDA11D50DEC4008AB479 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9044FD971D50DE03008AB479 /* LaunchScreen.storyboard */,
+				9044FD951D50DE03008AB479 /* Assets.xcassets */,
+				9044FD921D50DE03008AB479 /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9044FDA21D50DEC8008AB479 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +164,7 @@
 			files = (
 				9044FD911D50DE03008AB479 /* SecondViewController.swift in Sources */,
 				9044FD8D1D50DE03008AB479 /* AppDelegate.swift in Sources */,
-				9044FD8F1D50DE03008AB479 /* FirstViewController.swift in Sources */,
+				9044FD8F1D50DE03008AB479 /* CurrentLocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
