@@ -13,6 +13,7 @@
 		9044FD941D50DE03008AB479 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9044FD921D50DE03008AB479 /* Main.storyboard */; };
 		9044FD961D50DE03008AB479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9044FD951D50DE03008AB479 /* Assets.xcassets */; };
 		9044FD991D50DE03008AB479 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9044FD971D50DE03008AB479 /* LaunchScreen.storyboard */; };
+		905F7C7E1D526F28005E02EB /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905F7C7D1D526F28005E02EB /* LocationDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		9044FD951D50DE03008AB479 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9044FD981D50DE03008AB479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9044FD9A1D50DE03008AB479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		905F7C7D1D526F28005E02EB /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				9044FD8C1D50DE03008AB479 /* AppDelegate.swift */,
 				9044FD901D50DE03008AB479 /* SecondViewController.swift */,
 				9044FD8E1D50DE03008AB479 /* CurrentLocationViewController.swift */,
+				905F7C7D1D526F28005E02EB /* LocationDetailsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				905F7C7E1D526F28005E02EB /* LocationDetailsViewController.swift in Sources */,
 				9044FD911D50DE03008AB479 /* SecondViewController.swift in Sources */,
 				9044FD8D1D50DE03008AB479 /* AppDelegate.swift in Sources */,
 				9044FD8F1D50DE03008AB479 /* CurrentLocationViewController.swift in Sources */,
@@ -314,6 +318,7 @@
 				9044FD9F1D50DE03008AB479 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
