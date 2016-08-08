@@ -14,6 +14,7 @@
 		9044FD961D50DE03008AB479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9044FD951D50DE03008AB479 /* Assets.xcassets */; };
 		9044FD991D50DE03008AB479 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9044FD971D50DE03008AB479 /* LaunchScreen.storyboard */; };
 		905F7C7E1D526F28005E02EB /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905F7C7D1D526F28005E02EB /* LocationDetailsViewController.swift */; };
+		90CB2F9F1D58F77A00065CE6 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CB2F9E1D58F77A00065CE6 /* CategoryPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9044FD981D50DE03008AB479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9044FD9A1D50DE03008AB479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		905F7C7D1D526F28005E02EB /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
+		90CB2F9E1D58F77A00065CE6 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				9044FD901D50DE03008AB479 /* SecondViewController.swift */,
 				9044FD8E1D50DE03008AB479 /* CurrentLocationViewController.swift */,
 				905F7C7D1D526F28005E02EB /* LocationDetailsViewController.swift */,
+				90CB2F9E1D58F77A00065CE6 /* CategoryPickerViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				905F7C7E1D526F28005E02EB /* LocationDetailsViewController.swift in Sources */,
 				9044FD911D50DE03008AB479 /* SecondViewController.swift in Sources */,
 				9044FD8D1D50DE03008AB479 /* AppDelegate.swift in Sources */,
+				90CB2F9F1D58F77A00065CE6 /* CategoryPickerViewController.swift in Sources */,
 				9044FD8F1D50DE03008AB479 /* CurrentLocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

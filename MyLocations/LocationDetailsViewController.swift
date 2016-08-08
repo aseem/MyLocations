@@ -19,6 +19,7 @@ private let dateFormatter: NSDateFormatter = {
 class LocationDetailsViewController: UITableViewController {
     var coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     var placemark: CLPlacemark?
+    var categoryName = "No Category"
     
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var categoryLabel: UILabel!
@@ -35,13 +36,19 @@ class LocationDetailsViewController: UITableViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func categoryPickerDidPickCategory(segue: UIStoryboardSegue) {
+        let controller = segue.sourceViewController as! CategoryPickerViewController
+        self.categoryName = controller.selectedCategoryName
+        self.categoryLabel.text = self.categoryName
+    }
+    
     // MARK: View Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.descriptionTextView.text = ""
-        self.categoryLabel.text = ""
+        self.categoryLabel.text = self.categoryName
         self.latitudeLabel.text = String(format: "%.8f", coordinate.latitude)
         self.longitudeLabel.text = String(format: "%.8f", coordinate.longitude)
         if let placemark = placemark {
@@ -50,6 +57,13 @@ class LocationDetailsViewController: UITableViewController {
             addressLabel.text = "No Address Found"
         }
         self.dateLabel.text = formatDate(NSDate())
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "PickCategory" {
+            let controller = segue.destinationViewController as! CategoryPickerViewController
+            controller.selectedCategoryName = self.categoryName
+        }
     }
     
     // MARK: Table Methods
