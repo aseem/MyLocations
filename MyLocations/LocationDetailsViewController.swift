@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreLocation
-import Dispatch
 
 private let dateFormatter: NSDateFormatter = {
     let formatter = NSDateFormatter()
@@ -34,11 +33,9 @@ class LocationDetailsViewController: UITableViewController {
         hudView.text = "Tagged"
         
         // delay the closing of the view
-        let delayInSeconds = 0.6
-        let when = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)))
-        dispatch_after(when, dispatch_get_main_queue(), {
+        afterDelay(0.6) {
             self.dismissViewControllerAnimated(true, completion: nil)
-        })
+        }
     }
  
     @IBAction func cancel() {
