@@ -19,6 +19,7 @@
 		906B16991D623CFE00513F3A /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 906B16971D623CFE00513F3A /* DataModel.xcdatamodeld */; };
 		906B169C1D623F9300513F3A /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906B169A1D623F9300513F3A /* Location+CoreDataProperties.swift */; };
 		906B169D1D623F9300513F3A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906B169B1D623F9300513F3A /* Location.swift */; };
+		90AE35B71D6498B800325CCA /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AE35B61D6498B800325CCA /* LocationsViewController.swift */; };
 		90CB2F9F1D58F77A00065CE6 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CB2F9E1D58F77A00065CE6 /* CategoryPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		906B16981D623CFE00513F3A /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		906B169A1D623F9300513F3A /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Location+CoreDataProperties.swift"; path = "../Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		906B169B1D623F9300513F3A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = ../Location.swift; sourceTree = "<group>"; };
+		90AE35B61D6498B800325CCA /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		90CB2F9E1D58F77A00065CE6 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 				9044FD8E1D50DE03008AB479 /* CurrentLocationViewController.swift */,
 				905F7C7D1D526F28005E02EB /* LocationDetailsViewController.swift */,
 				90CB2F9E1D58F77A00065CE6 /* CategoryPickerViewController.swift */,
+				90AE35B61D6498B800325CCA /* LocationsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				906B16991D623CFE00513F3A /* DataModel.xcdatamodeld in Sources */,
 				906B169D1D623F9300513F3A /* Location.swift in Sources */,
 				9044FD911D50DE03008AB479 /* SecondViewController.swift in Sources */,
+				90AE35B71D6498B800325CCA /* LocationsViewController.swift in Sources */,
 				90566CF81D5BACDF006427B3 /* HudView.swift in Sources */,
 				906B16951D6236AB00513F3A /* Functions.swift in Sources */,
 				906B169C1D623F9300513F3A /* Location+CoreDataProperties.swift in Sources */,
