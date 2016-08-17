@@ -23,6 +23,18 @@ class LocationDetailsViewController: UITableViewController {
     var categoryName = "No Category"
     var managedObjectContext: NSManagedObjectContext!
     var date = NSDate()
+    var descriptionText = ""
+    var locationToEdit: Location? {
+        didSet {
+            if let location = locationToEdit {
+                self.descriptionText = location.locationDescription
+                self.categoryName = location.category
+                self.date = location.date
+                self.coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
+                self.placemark = location.placemark
+            }
+        }
+    }
     
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var categoryLabel: UILabel!
@@ -33,10 +45,18 @@ class LocationDetailsViewController: UITableViewController {
     
     @IBAction func done() {
         let hudView = HudView.hudInView(self.navigationController!.view, animated: true)
-        hudView.text = "Tagged"
+        let location: Location
+        
+        if let temp = locationToEdit {
+            hudView.text = "Updated"
+            location = temp
+        }
+        else {
+            hudView.text = "Tagged"
+            location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: self.managedObjectContext) as! Location
+        }
         
         // save the data
-        let location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: self.managedObjectContext) as! Location
         location.locationDescription = descriptionTextView.text
         location.category = categoryName
         location.latitude = coordinate.latitude
@@ -72,7 +92,11 @@ class LocationDetailsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.descriptionTextView.text = ""
+        if let location = self.locationToEdit {
+            self.title = "Edit Location"
+        }
+        
+        self.descriptionTextView.text = self.descriptionText
         self.categoryLabel.text = self.categoryName
         self.latitudeLabel.text = String(format: "%.8f", coordinate.latitude)
         self.longitudeLabel.text = String(format: "%.8f", coordinate.longitude)
