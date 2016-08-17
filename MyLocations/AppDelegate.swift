@@ -91,6 +91,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let navigationController = tabBarViewControllers[1] as! UINavigationController
             let locationsViewController = navigationController.viewControllers[0] as! LocationsViewController
             locationsViewController.managedObjectContext = self.managedObjectContext
+            
+            // Handle iOS9 Bug
+            let _ = locationsViewController.view
         }
         
         // listen for core data notifications
