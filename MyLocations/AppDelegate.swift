@@ -94,6 +94,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             // Handle iOS9 Bug
             let _ = locationsViewController.view
+            
+            // tab3
+            let mapViewController = tabBarViewControllers[2] as! MapViewController
+            mapViewController.managedObjectContext = self.managedObjectContext
         }
         
         // listen for core data notifications
