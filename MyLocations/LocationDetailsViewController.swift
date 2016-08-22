@@ -35,6 +35,17 @@ class LocationDetailsViewController: UITableViewController {
             }
         }
     }
+    var image: UIImage? {
+        didSet {
+            if let image = image {
+                self.imageView.image = image
+                self.imageView.hidden = false
+                self.imageView.frame = CGRect(x: 10, y: 10, width: 260, height: 260)
+                self.addPhotoLabel.hidden = true
+            }
+        }
+    }
+    var observer: AnyObject!
     
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var categoryLabel: UILabel!
@@ -42,6 +53,8 @@ class LocationDetailsViewController: UITableViewController {
     @IBOutlet weak var longitudeLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var addPhotoLabel: UILabel!
     
     @IBAction func done() {
         let hudView = HudView.hudInView(self.navigationController!.view, animated: true)
@@ -110,6 +123,12 @@ class LocationDetailsViewController: UITableViewController {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LocationDetailsViewController.hideKeyboard(_:)))
         gestureRecognizer.cancelsTouchesInView = false
         self.tableView.addGestureRecognizer(gestureRecognizer)
+        listenForBackgroundNotification()
+    }
+    
+    deinit {
+        print("** denit \(self) ***")
+        NSNotificationCenter.defaultCenter().removeObserver(self.observer)
     }
     
     func hideKeyboard(gestureRecognizer: UIGestureRecognizer) {
@@ -135,6 +154,14 @@ class LocationDetailsViewController: UITableViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 0 && indexPath.row == 0 {
             return 88
+        }
+        else if indexPath.section == 1 {
+            if self.imageView.hidden {
+                return 44
+            }
+            else {
+                return 280
+            }
         }
         else if indexPath.section == 2 && indexPath.row == 2 {
             addressLabel.frame.size = CGSize(width: view.bounds.size.width - 115, height: 10000)
@@ -195,6 +222,17 @@ class LocationDetailsViewController: UITableViewController {
     func formatDate(date: NSDate) -> String {
         return dateFormatter.stringFromDate(date)
     }
+    
+    func listenForBackgroundNotification() {
+        self.observer = NSNotificationCenter.defaultCenter().addObserverForName(UIApplicationDidEnterBackgroundNotification, object: nil, queue: NSOperationQueue.mainQueue()) { [weak self] _ in
+            if let strongSelf = self {
+                if strongSelf.presentedViewController != nil {
+                    strongSelf.dismissViewControllerAnimated(false, completion: nil)
+                }
+                strongSelf.descriptionTextView.resignFirstResponder()
+            }
+        }
+    }
 }
 
 extension LocationDetailsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -237,6 +275,8 @@ extension LocationDetailsViewController: UIImagePickerControllerDelegate, UINavi
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        self.image = info[UIImagePickerControllerEditedImage] as? UIImage
+        self.tableView.reloadData()
         dismissViewControllerAnimated(true, completion: nil)
     }
     
