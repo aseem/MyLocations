@@ -67,6 +67,7 @@ class LocationDetailsViewController: UITableViewController {
         else {
             hudView.text = "Tagged"
             location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: self.managedObjectContext) as! Location
+            location.photoID = nil
         }
         
         // save the data
@@ -76,6 +77,22 @@ class LocationDetailsViewController: UITableViewController {
         location.longitude = coordinate.longitude
         location.date = date
         location.placemark = placemark
+        
+        // save the image
+        if let image = self.image {
+            if !location.hasPhoto {
+                location.photoID = Location.nextPhotoID()
+            }
+            
+            if let data = UIImageJPEGRepresentation(image, 0.5) {
+                do {
+                    try data.writeToFile(location.photoPath, options: .DataWritingAtomic)
+                }
+                catch {
+                    print("Error writing image file: \(error)")
+                }
+            }
+        }
         
         do {
             try self.managedObjectContext.save()
@@ -107,6 +124,11 @@ class LocationDetailsViewController: UITableViewController {
         
         if let location = self.locationToEdit {
             self.title = "Edit Location"
+            if location.hasPhoto {
+                if let image = location.photoImage {
+                    showImage(image)
+                }
+            }
         }
         
         self.descriptionTextView.text = self.descriptionText
@@ -221,6 +243,13 @@ class LocationDetailsViewController: UITableViewController {
     
     func formatDate(date: NSDate) -> String {
         return dateFormatter.stringFromDate(date)
+    }
+    
+    func showImage(image: UIImage) {
+        self.imageView.image = image
+        self.imageView.hidden = false
+        self.imageView.frame = CGRect(x: 10, y: 10, width: 260, height: 260)
+        self.addPhotoLabel.hidden = true
     }
     
     func listenForBackgroundNotification() {
