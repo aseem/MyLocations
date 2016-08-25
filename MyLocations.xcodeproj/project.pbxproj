@@ -17,6 +17,9 @@
 		9056B1F21D6603C20094FE8D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9056B1F11D6603C20094FE8D /* MapViewController.swift */; };
 		9056B2061D6F3F1C0094FE8D /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9056B2051D6F3F1C0094FE8D /* UIImage+Resize.swift */; };
 		9056B2081D6F514C0094FE8D /* String+AddText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9056B2071D6F514C0094FE8D /* String+AddText.swift */; };
+		9056B20A1D6F5AA10094FE8D /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9056B2091D6F5AA10094FE8D /* MyTabBarController.swift */; };
+		9056B20C1D6F6E120094FE8D /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9056B20B1D6F6E120094FE8D /* MyNavigationController.swift */; };
+		9056B20F1D6F6EDE0094FE8D /* MyImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9056B20E1D6F6EDE0094FE8D /* MyImagePickerController.swift */; };
 		905F7C7E1D526F28005E02EB /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905F7C7D1D526F28005E02EB /* LocationDetailsViewController.swift */; };
 		906B16951D6236AB00513F3A /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906B16941D6236AB00513F3A /* Functions.swift */; };
 		906B16991D623CFE00513F3A /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 906B16971D623CFE00513F3A /* DataModel.xcdatamodeld */; };
@@ -40,6 +43,9 @@
 		9056B1F11D6603C20094FE8D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9056B2051D6F3F1C0094FE8D /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		9056B2071D6F514C0094FE8D /* String+AddText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+AddText.swift"; sourceTree = "<group>"; };
+		9056B2091D6F5AA10094FE8D /* MyTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
+		9056B20B1D6F6E120094FE8D /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
+		9056B20E1D6F6EDE0094FE8D /* MyImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyImagePickerController.swift; sourceTree = "<group>"; };
 		905F7C7D1D526F28005E02EB /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		906B16941D6236AB00513F3A /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		906B16981D623CFE00513F3A /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -94,6 +100,7 @@
 		9044FDA01D50DEBC008AB479 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9056B20D1D6F6EBC0094FE8D /* Base Classes */,
 				9044FD8C1D50DE03008AB479 /* AppDelegate.swift */,
 				9044FD8E1D50DE03008AB479 /* CurrentLocationViewController.swift */,
 				905F7C7D1D526F28005E02EB /* LocationDetailsViewController.swift */,
@@ -124,6 +131,16 @@
 				906B16971D623CFE00513F3A /* DataModel.xcdatamodeld */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		9056B20D1D6F6EBC0094FE8D /* Base Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9056B2091D6F5AA10094FE8D /* MyTabBarController.swift */,
+				9056B20B1D6F6E120094FE8D /* MyNavigationController.swift */,
+				9056B20E1D6F6EDE0094FE8D /* MyImagePickerController.swift */,
+			);
+			name = "Base Classes";
 			sourceTree = "<group>";
 		};
 		906B16961D623CD900513F3A /* Utils */ = {
@@ -208,7 +225,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				905F7C7E1D526F28005E02EB /* LocationDetailsViewController.swift in Sources */,
+				9056B20C1D6F6E120094FE8D /* MyNavigationController.swift in Sources */,
 				906B16991D623CFE00513F3A /* DataModel.xcdatamodeld in Sources */,
+				9056B20F1D6F6EDE0094FE8D /* MyImagePickerController.swift in Sources */,
 				906B169D1D623F9300513F3A /* Location.swift in Sources */,
 				90AE35B71D6498B800325CCA /* LocationsViewController.swift in Sources */,
 				90566CF81D5BACDF006427B3 /* HudView.swift in Sources */,
@@ -221,6 +240,7 @@
 				9044FD8D1D50DE03008AB479 /* AppDelegate.swift in Sources */,
 				90CB2F9F1D58F77A00065CE6 /* CategoryPickerViewController.swift in Sources */,
 				9044FD8F1D50DE03008AB479 /* CurrentLocationViewController.swift in Sources */,
+				9056B20A1D6F5AA10094FE8D /* MyTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
